@@ -5,12 +5,12 @@ Support for flags of maps and slices.
 ## Map Usage 
 map\_example.go:
 ```go
-graphOfFriends := lFlag.NewMapStringString()
+graphOfFriends := lFlag.NewMapStringString() 
 
 flag.Var(&graphOfFriends, "m", "graphOfFriends)
 flag.Parse()
 
-fmt.Println(graphOfFriends)
+fmt.Println(graphOfFriends) // graphOfFriends.String()
 ```
 -------------------------------------------
 shell:
@@ -45,7 +45,7 @@ Therefore, the former approach of defining a 'New' function for each possible ty
 
 ## Encoded Semicolons
 
-Escaped semicolons will be ignored and the leading backslash removed!
+Escaped semicolons will be ignored and the leading backslash removed when used in a map type! (but not with slices)
 
 For example:
 -m aPunctuationMark:\\\\: --> {"aPunctuationMark":":"}
